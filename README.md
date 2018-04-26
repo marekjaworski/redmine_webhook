@@ -22,33 +22,33 @@ Post Data Example
 
 ### Time entry added
 
-{
-  "payload": {
-    "action": "updated",
-    "issue": {
-      "id": 451,
-      "hours": 3,
-      "comment": "time comment",
-      "project": {
-        "id": 4
-        "name": "Test Project",
-        "identifier": "test",
-        "description": "",
-        "created_on": "2018-02-08T09:47:37.000Z",
-        "homepage": ""
-      },
-      "user": {
-        "id": 3,
-        "login": "test",
-        "mail": "test@example.com",
-        "firstname": "test",
-        "lastname": "user",
-        "identity_url": null,
-        "icon_url": "http://www.gravatar.com/avatar/example"
+    {
+      "payload": {
+        "action": "updated",
+        "issue": {
+          "id": 451,
+          "hours": 3,
+          "comment": "time comment",
+          "project": {
+            "id": 4,
+            "name": "Test Project",
+            "identifier": "test",
+            "description": "",
+            "created_on": "2018-02-08T09:47:37.000Z",
+            "homepage": ""
+          },
+          "user": {
+            "id": 3,
+            "login": "test",
+            "mail": "test@example.com",
+            "firstname": "test",
+            "lastname": "user",
+            "identity_url": null,
+            "icon_url": "http://www.gravatar.com/avatar/example"
+          }
+        }
       }
     }
-  }
-}
 
 ### Issue opened
 
