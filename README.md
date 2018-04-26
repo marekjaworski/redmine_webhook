@@ -12,13 +12,43 @@ Install
 Type below commands:
 
     $ cd $RAILS_ROOT/plugins
-    $ git clone https://github.com/suer/redmine_webhook.git
-    $ rake redmine:plugins:migrate RAILS_ENV=production
+    $ git clone https://github.com/marekjaworski/redmine_webhook.git
+    $ rake redmine:plugins:migrate RAILS_ENV=production NAME=redmine_webhook
 
 Then, restart your redmine.
 
 Post Data Example
 ------------------------------
+
+### Time entry added
+
+{
+  "payload": {
+    "action": "updated",
+    "issue": {
+      "id": 451,
+      "hours": 3,
+      "comment": "time comment",
+      "project": {
+        "id": 4
+        "name": "Test Project",
+        "identifier": "test",
+        "description": "",
+        "created_on": "2018-02-08T09:47:37.000Z",
+        "homepage": ""
+      },
+      "user": {
+        "id": 3,
+        "login": "test",
+        "mail": "test@example.com",
+        "firstname": "test",
+        "lastname": "user",
+        "identity_url": null,
+        "icon_url": "http://www.gravatar.com/avatar/example"
+      }
+    }
+  }
+}
 
 ### Issue opened
 
