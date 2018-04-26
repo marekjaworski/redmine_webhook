@@ -20,7 +20,25 @@ module RedmineWebhook
       post(webhooks, journal_to_json(issue, journal, controller))
     end
 
+    def controller_timelog_edit_before_save(context = {})
+      time_entry = context[:time_entry]
+      controller = context[:controller]
+      project = time_entry.project
+      webhooks = Webhook.where(:project_id => time_entry.project_id)
+      return unless webhooks
+      post(webhooks, timelog_to_json(time_entry, controller))
+    end
+
     private
+    def timelog_to_json(time_entry, controller)
+      {
+        :payload => {
+          :action => 'updated',
+          :issue => RedmineWebhook::TimelogWrapper.new(time_entry).to_hash,
+        }
+      }.to_json
+    end
+
     def issue_to_json(issue, controller)
       {
         :payload => {
