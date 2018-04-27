@@ -30,11 +30,12 @@ module RedmineWebhook
     end
 
     private
+
     def timelog_to_json(time_entry, controller)
       {
         :payload => {
           :action => 'updated',
-          :issue => RedmineWebhook::TimelogWrapper.new(time_entry).to_hash,
+          :timelog => RedmineWebhook::TimelogWrapper.new(time_entry).to_hash,
         }
       }.to_json
     end
