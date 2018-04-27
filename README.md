@@ -27,8 +27,9 @@ Post Data Example
     {
       "payload": {
         "action": "updated",
-        "issue": {
+        "timelog": {
           "id": 451,
+          "created_on": "2018-02-08T09:47:37.000Z"
           "hours": 3,
           "comment": "time comment",
           "project": {
